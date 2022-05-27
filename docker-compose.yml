@@ -23,4 +23,4 @@ services:
       - /app/node_modules
       - .:/app
     # Starts development server
-    command: ['npm', 'run', 'build']
+    command: ['npm', 'run', 'test']
