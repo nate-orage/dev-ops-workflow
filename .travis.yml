@@ -13,10 +13,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: 'us-west-1'
-  app: 'docker-react'
-  env: 'Dockerreact-env'
+  app: 'weather-app'
+  env: 'Weatherapp-env'
   bucket_name: 'elasticbeanstalk-us-west-1-329048240760'
-  bucket_path: 'docker-react'
+  bucket_path: 'weather-app'
   on:
     branch: main
   access_key_id: "$AWS_ACCESS_KEY"
