@@ -1,26 +1,8 @@
 version: '3'
 services:
-# Name of the web app
   web:
-    # This will build locally using the specified dockerfile
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - '3000:3000'
-    # Preserves /app/node_modules and copies $(pwd) into /app on the container
-    volumes:
-      - /app/node_modules
-      - .:/app
-  # Service to run tests
-  tests:
-      # This will build locally using the specified dockerfile
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    # Preserves /app/node_modules and copies $(pwd) into /app on the container. THIS ALSO ALLOWS FOR REAL TIME UPDATES
-    volumes:
-      - /app/node_modules
-      - .:/app
-    # Starts development server
-    command: ['npm', 'run', 'test']
+      - '80:80'
