@@ -14,7 +14,7 @@ deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
   app: 'workflow-app'
-  env: 'Workflowapp-env'
+  env: 'Workflowapp-env-1'
   bucket_name: 'elasticbeanstalk-us-east-1-329048240760'
   bucket_path: 'workflow-app'
   on:
