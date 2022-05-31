@@ -13,10 +13,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: 'us-west-1'
-  app: 'weather-app'
-  env: 'Weatherapp-env'
+  app: 'oakland-weather'
+  env: 'Oaklandweather-env'
   bucket_name: 'elasticbeanstalk-us-west-1-329048240760'
-  bucket_path: 'weather-app'
+  bucket_path: 'oakland-weather'
   on:
     branch: main
   access_key_id: "$AWS_ACCESS_KEY"
