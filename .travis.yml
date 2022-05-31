@@ -15,7 +15,7 @@ deploy:
   region: 'us-east-1'
   app: 'oakland-weather'
   env: 'Oaklandweather-env'
-  bucket_name: 'elasticbeanstalk-us-west-1-329048240760'
+  bucket_name: 'elasticbeanstalk-us-east-1-329048240760'
   bucket_path: 'oakland-weather'
   on:
     branch: main
