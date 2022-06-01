@@ -1,16 +1,23 @@
+<!-- https://www.markdownguide.org/basic-syntax/ -->
 # CI/CD Workflow
-# Docker configurations
-- Dockerfile
-    - This will run in production.
-    - `docker build .`
-- Dockerfile.dev
-    - This will run in dev/testing environment
-    - This uses Dockerfile.dev. Build the image and start the container. The container consists of 2 services: web and tests. 
-    ```bash
-    docker-compose --build
-    docker run -d -p 3000:3000 <image ID>
-    ```
+This is a simple Github/Travis CI workflow that deploys a node.js application to AWS. Elastic Beanstalk manages the tasks that deploy the docker application to an EC2 instance that auto-scales if demand increases.
 
+![Workflow](./img/workflow.png 'Workflow')
+
+## Dev Workflow
+- Dev commits changes to "Feature" branch on Github.
+- Travis CI detects changes and runs tests.
+- If the tests pass, the dev submits a pull request to the main branch.
+- Once the pull request is opened, Travis tests again.
+- If the tests pass, whoever owns the main branch will approve the pull request to the main branch.
+- Once the pull request is approved, Travis sends the application to AWS Elastic Beanstalk where it will manage the tasks that deploy the application.
+
+## Contents
+- `public` and `src` are files for the web application.
+- `.travis.yml` contains local test commands and deployment details for AWS.
+- `docker-compose-dev.yml` will build a dev environment on your local computer. You can access the web app at http://localhost:3000.
+- `docker-compose.yml` is used in production.
+<!-- 
 ## Common Docker Commands
 ```bash
 docker images # List docker images 
@@ -92,4 +99,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
