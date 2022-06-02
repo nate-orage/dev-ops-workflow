@@ -2,7 +2,7 @@
 # CI/CD Workflow
 This is a simple Github/Travis CI workflow that deploys a node.js application to AWS. Elastic Beanstalk manages the tasks that deploy the docker application to an EC2 instance that auto-scales if demand increases.
 
-![Workflow](./img/workflow.png 'Workflow')
+![Workflow](./frontend/img/workflow.png 'Workflow')
 
 ## Dev Workflow
 - Dev commits changes to "Feature" branch on Github.
