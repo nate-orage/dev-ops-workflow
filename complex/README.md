@@ -1,2 +1,2 @@
 # Development Environment
-![dev](./dev-env.png.png 'dev')
+![dev](./dev-env.png 'dev')
