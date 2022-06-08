@@ -1,1 +1,4 @@
 ignore
+complex/$dev-env.png.bkp
+complex/$dev-env.png.dtmp
+complex/dev-env.png:Zone.Identifier
